@@ -1,0 +1,46 @@
+<div class="pages">
+	<section class="page">
+		<div class="page__inner">
+			<h2 class="title title__main">
+				<span class="title__main--decoration">Blog</span>
+			</h2>
+			<div class="content__section">
+				<blockquote class="blockquote">
+					<i class="icon blockquote__quote blockquote__quote--left im-quote-left"></i>
+					<p>This section still needs content describing the blog section, feel free to enjoy some lorem ipsum...</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, sit ipsam at et id quisquam magni mollitia fugit
+						esse voluptatibus velit earum labore hic laboriosam quidem culpa obcaecati repudiandae delectus eligendi cum tempora
+						amet impedit corporis! Iusto, enim, autem, omnis reiciendis porro amet alias non temporibus pariatur nobis adipisci
+						saepe!</p>
+					<i class="icon blockquote__quote blockquote__quote--right im-quote-right"></i>
+				</blockquote>
+			</div>
+			<div class="content__section">
+				<div class="cards">
+					<article ng-repeat="entry in blog" class="card">
+						<header class="card__header">
+							<img src="{{ entry.thumbnail }}" class="responsive-img card__img" alt="{{ entry.title | uppercase }} Thumbnail">
+							<span class="card__date">{{ entry.date | date : "mediumDate"}}</span>
+						</header>
+						<div class="card__content">
+							<h4 class="title title_small card__title">{{ entry.title | uppercase }}</h4>
+							<div class="card__description">
+								<p>{{ entry.excerpt }}</p>
+							</div>
+						</div>
+						<footer class="card__footer">
+							<div class="tags">
+								<i class="icon im-local_offer"></i>
+								<span class="tags__item tags__label">Tags:</span>
+								<span ng-if="entry.tags" ng-repeat="tag in entry.tags.split(', ')" class="tags__item tags__hashtag">
+									<a href="#">#{{ tag }}</a>
+								</span>
+							</div>
+							<a ng-href="./blog/{{ entry.link }}" class="link-flat js-readmore">Read more</a>
+						</footer>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,42 @@
+{
+  "name": "portfolio",
+  "version": "2.0.2",
+  "description": "Joseph Wright's Portfolio project for school, first released Spring '17",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codedwright/portfolio.git"
+  },
+  "keywords": [
+    "angular",
+    "sass",
+    "php"
+  ],
+  "author": {
+    "name": "Joseph Wright",
+    "email": "joseph@codedwright.com",
+    "url": "https://codedwright.com/"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-bump": "^0.8.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-route": "^1.6.9",
+    "angular-sanitize": "^1.6.9",
+    "ngmap": "^1.18.4"
+  }
+}

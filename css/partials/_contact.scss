@@ -1,0 +1,214 @@
+.iconbox__icon {
+	margin-right: .8rem;
+	&:before {
+		color: #303F9F
+	}
+}
+.social {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-align-items: center;
+	align-items: center
+}
+.social__iconz {
+	width: 4rem;
+	height: 4rem;
+	line-height: 4rem;
+	text-align: center;
+	margin: 0 .5rem;
+	border-radius: 50%;
+	border: .1rem solid #303F9F;
+	transition: background-color .4s ease-out
+}
+.social__icon:hover, .social__icon:focus {
+	background-color: #303F9F
+}
+.social__icon:hover:before, .social__icon:focus:before {
+	color: #fff
+}
+.social__icon:focus {
+	outline: none
+}
+.contacts__social {
+	-webkit-justify-content: center;
+	justify-content: center;
+	margin-top: 8rem
+}
+.social__name {
+	position: absolute;
+	opacity: 0;
+	left: -10000px
+}
+.form__group {
+	margin-bottom: 2rem;
+	position: relative;
+	overflow: hidden;
+	font-size: 0
+}
+.form__inner {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap
+}
+.form__row {
+	width: 100%;
+}
+.form__column {
+	width: 49%
+}
+.form__column:nth-of-type(2n+2) {
+	margin-left: 1%
+}
+.form__column:nth-of-type(2n+1) {
+	margin-right: 1%
+}
+.form__button-box {
+	text-align: center;
+	padding-top: 2rem
+}
+.form__icon {
+	position: absolute;
+	top: .8rem;
+	left: .5rem;
+	&:before {
+		font-size: 1.6rem;
+	}
+}
+.form__element {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: .8rem 3rem;
+	width: 100%;
+	border: none;
+	border-bottom: .2rem solid #eee;
+	font-family: 'Lato', sans-serif;
+	font-size: 1.4rem;
+	color: #000
+}
+.form__element::-webkit-input-placeholder {
+color:#000
+}
+.form__element::-moz-placeholder {
+color:#000
+}
+.form__element:-ms-input-placeholder {
+color:#000
+}
+.form__decor-line {
+	width: 100%;
+	height: .2rem;
+	background-color: #3F51B5;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	-webkit-transform: translate3d(-150%, 0, 0);
+	transform: translate3d(-150%, 0, 0);
+	transition: -webkit-transform .5s ease-out;
+	transition: transform .5s ease-out;
+	transition: transform .5s ease-out, -webkit-transform .5s ease-out
+}
+.field:focus {
+	outline: none
+}
+.field:focus~.form__decor-line {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+}
+.field_valid::-webkit-input-placeholder {
+color:#66ad69
+}
+.field_valid::-moz-placeholder {
+color:#66ad69
+}
+.field_valid:-ms-input-placeholder {
+color:#66ad69
+}
+.field_valid~.form__icon:before {
+	color: #66ad69
+}
+.field_valid~.form__decor-line {
+	background-color: #66ad69;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+}
+.field_invalid::-webkit-input-placeholder {
+color:#dc3232
+}
+.field_invalid::-moz-placeholder {
+color:#dc3232
+}
+.field_invalid:-ms-input-placeholder {
+color:#dc3232
+}
+.field_invalid~.form__icon:before {
+	color: #dc3232
+}
+.field_invalid~.form__decor-line {
+	background-color: #dc3232;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+}
+.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.select::-ms-expand {
+    display: none
+}
+
+.select:focus {
+    outline: none
+}
+
+.textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 5rem;
+    max-height: 15rem
+}
+
+.button {
+    font-family: 'Lato',sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1rem 4rem;
+    text-align: center;
+    min-width: 150px;
+    background-color: #3F51B5;
+    cursor: pointer;
+    transition: background-color .4s ease-out
+}
+
+.button:hover,.button:focus {
+    background-color: #303F9F
+}
+
+.button:focus {
+    outline-color: #303F9F
+}
+
+.form__tab {
+	border-color: #eee;
+    border-style: solid;
+    border-width: .2rem .2rem 0 .2rem;
+	padding: .2rem .4rem 0 .4rem;
+	text-align: right;
+}
+
+.map {
+	width: 100%;
+	height: auto;
+	margin-top: -5rem;
+	padding: 1px 0;
+	@media #{$medium-up} { /*1400+*/
+		// height: 30rem
+	}
+}

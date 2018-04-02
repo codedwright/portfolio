@@ -1,0 +1,40 @@
+<div class="pages">
+        <section class="page">
+            <div class="page__inner">
+                <h2 class="title title__main">
+                    <span class="title__main--decoration">Administration</span>
+                </h2>
+                <div class="content__section">
+                    <a ng-href="admin" class="btn download" style="display: block">
+                        <i class="icon icon__link fa fa-chevron-circle-left"></i>
+                        <span class="download__label">Administration</span>
+                    </a>
+                </div>
+                <div class="content__section">
+                    <h3 class="title title_middle">
+                        <i class="icon icon--small icon--main fa fa-pencil-square-o"></i>
+                        <span class="title__label">Delete Blog Entry</span>
+                    </h3>
+                    <ng-form="deleteBlogEntry" class="form">
+                        <div class="form__inner">
+                            <div class="form__group form__row">
+                                <input type="password" class="form__element field" ng-model="password" placeholder="Password" required>
+                                <i class="icon form__icon fa fa-plus-circle"></i>
+                                <span class="form__decor-line"></span>
+                            </div>
+                            <div class="form__group form__row">
+                                <select class="form__element select" ng-options="option.title for option in blog track by option.blogId" ng-model="blogId">
+                                    <option value="">-- Choose --</option>
+                                </select>
+                                <i class="icon form__icon im-book"></i>
+                            </div>
+                            <div ng-show="message" class="form__group form__row admin__message" ng-bind-html="message"></div>
+                        </div>
+                        <div class="form__button-box">
+                            <button class="button" ng-click="password ? blogDelete(password, blogId) : return">delete blog entry</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>

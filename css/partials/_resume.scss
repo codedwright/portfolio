@@ -1,0 +1,117 @@
+// Timeline
+.timeline {
+	//!--border-left: .3rem solid #303F9F;
+	position: relative;
+	//!--padding: 3rem 0 3rem 2rem;
+	// background: linear-gradient(to right, $shadow .2%, $default .4%, $default 100%);
+	@media #{$xlarge-up} { /*1400+*/
+		&:after {
+			left: 50%!important;
+		}
+		// background: linear-gradient(to right, $default 0%, $default 49.6%, $shadow 50%, $default 50.4%, $default 100%);
+	}
+	&:after {
+		content:"";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		border-left: .5rem solid $shadow;
+		transform: translate(-50%);
+	}
+}
+.timeline__box {
+	position: relative;
+	margin-bottom: 3rem;
+	padding: 2rem;
+	border: 2px solid $primary; //#3F51B5;
+	transition: border-color .4s ease-out;
+	z-index: 1;
+	&:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: $primary; //#3F51B5;
+		transition: background-color .4s ease-out;
+	}
+	&:before {
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+	}
+	&:after {
+		width: 9.4rem;
+		height: 2px;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&:hover {
+		border-color: $secondary; //#303F9F;
+	}
+	&:hover:before, &:hover:after {
+		background-color: $secondary; //#303F9F;
+	}
+	&:nth-child(odd) {
+		margin-left: 8.9rem;
+		margin-right: 0;
+		&:after {
+			left: -9.4rem;
+			right: auto;
+		}
+		&:before {
+			left: -9.4rem;
+			right: auto;
+		}
+	}
+	&:nth-child(even) {
+		margin-left: 8.9rem;
+		text-align: left;
+		&:after {
+			left: -9.4rem;
+			right: auto;
+		}
+		&:before {
+			left: -9.4rem;
+			right: auto;
+		}
+	}
+	@media #{$xlarge-up} { /*1400+*/
+		&:nth-child(odd) {
+			margin-right: calc(50% + 8.9rem);
+			margin-left: 0;
+			&:before, &:after {
+				right: -9.5rem;
+				left: auto;
+			}
+		}
+		&:nth-child(even) {
+			margin-left: calc(50% + 8.9rem);
+			text-align: right;
+			&:before, &:after {
+				left: -9.5rem;
+				right: auto;
+			}
+		}
+	}
+}
+.timeline__caption {
+	display: block;
+	margin-top: .3rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: $primary; //#3F51B5;
+}
+// Download Button
+.download {
+	display: block;
+	margin: 3rem auto 0!important;
+	width: 20rem;
+}
+.download__label {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 1rem;
+}

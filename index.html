@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio</title>
+<base href="http://localhost/Portfolio/">
+<link href="./css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+<script src="./scripts.js"></script>
+<!--<script>
+window.addEventListener('scroll', function(e) {
+	var nav = document.querySelectorAll('nav')[0];
+
+	if (this.pageYOffset >= 200) {
+		nav.style.position = 'fixed';
+		nav.style.top = '20px';
+		nav.style.right = '20px';
+	} else {
+		nav.style.position = 'relative';
+		nav.style.top = 'inherit';
+		nav.style.right = 'inherit';
+	}
+});	
+</script>-->
+
+</head>
+<body ng-app="portfolio">
+	<aside class="sidebar">
+		<div class="sidebar__video">
+			<video class="sidebar__video--full-height" muted>
+			</video>
+		</div>
+		<h1 class="sidebar__heading">Joseph Wright
+			<span class="sidebar__message">Front-end web developer with experience writing HTML, CSS, Bootstrap, JavaScript, SQL, and PHP!</span>
+		</h1>
+	</aside>
+	<section class="container">
+		<header class="header">
+			<nav class="nav"  ng-controller="BaseController">
+				<a ng-href="./index" class="nav__link" ng-class="{ 'nav__link--active': active('/') }">
+					<i class="icon nav__icon im-account_circle"></i>
+					<span class="nav__label">About</span>
+				</a>
+				<a ng-href="./resume" class="nav__link" ng-class="{ 'nav__link--active': active('/resume') }">
+					<i class="icon nav__icon im-assignment"></i>
+					<span class="nav__label">Resume</span>
+				</a>
+				<a ng-href="./services" class="nav__link" ng-class="{ 'nav__link--active': active('/services') }">
+					<i class="icon nav__icon im-embed2"></i>
+					<span class="nav__label">Services</span>
+				</a>
+				<a ng-href="./portfolio" class="nav__link" ng-class="{ 'nav__link--active': active('/portfolio') }">
+					<i class="icon nav__icon im-tablet"></i>
+					<span class="nav__label">Portfolio</span>
+				</a>
+				<a ng-href="./blog" class="nav__link" ng-class="{ 'nav__link--active': active('/blog') }">
+					<i class="icon nav__icon im-mode_edit"></i>
+					<span class="nav__label">Blog</span>
+				</a>
+				<a ng-href="./contact" class="nav__link" ng-class="{ 'nav__link--active': active('/contact') }">
+					<i class="icon nav__icon im-person_pin_circle"></i>
+					<span class="nav__label">Contact</span>
+				</a>
+			</nav>
+		</header>
+		<main class="content" ng-view></main>
+		<footer class="footer">
+			<span>Copyright &copy;2018 All rights reserved</span>
+		</footer>
+	</section>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script>
+		
+		!function(n) {
+			n.fn.initStrictNav = function(i) {
+				function s() {
+					l = window.innerWidth < 1201 ? n(".sidebar").outerHeight() : v
+				}
+				function a(s) {
+					var a = n(s);
+					e.scrollTop() > i.offset().top && e.scrollTop(l - v),
+					i.find(".nav__link--active").removeClass("nav__link--active"),
+					a.addClass("nav__link--active")
+				}
+				/*function t(i) {
+					var s, t;
+					event.keyCode == i && (event.preventDefault(),
+					s = o.find(".nav__link--active"),
+					t = s.next(),
+					t.length || (t = n(".nav__link:first-child")),
+					s.removeClass("nav__link--active"),
+					t.addClass("nav__link--active"),
+					a(t.attr("href")))
+				}*/
+				var e = n(document)
+				  , o = n(".nav")
+				  , v = o.outerHeight()
+				  , l = 0;
+				e.on("keydown", function() {
+					var n = "9";
+					t(n)
+				}),
+				// n(".nav__link").on("click", function(i) {
+				// 	/*i.preventDefault();*/
+				// 	var s;
+				// 	n(this).hasClass("nav__link--active") || (s = n(this).attr("href"),
+				// 	n(".nav").find("nav__link--active").removeClass("nav__link--active"),
+				// 	n(this).addClass("nav__link--active"),
+				// 	a(s))
+				// }), // this just messes up angular 
+				e.on("scroll", function() {
+					n(this).scrollTop() > l ? o.hasClass("nav--fixed") || o.addClass("nav--fixed") : o.removeClass("nav--fixed")
+				}),
+				s(),
+				n(window).on("resize", function() {
+					s()
+				})
+			}
+			$(this).initStrictNav($("#about"));
+		}(window.jQuery);
+	</script>
+	
+	<script src="./portfolio.js"></script>
+</body>
+</html>

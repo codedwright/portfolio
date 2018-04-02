@@ -1,0 +1,136 @@
+.header {
+	height: auto;
+	@media #{$large-up} { /*1200+*/
+		padding-top: 2vw;
+	}
+	@media #{$large-only} { /*1200-1400*/
+		height: 3.5vw;
+		line-height: 3.5vw;
+	}
+	@media #{$xlarge-up} { /*1400+*/
+		height: 2.5vw;
+		line-height: 2.5vw;
+	}
+}
+.nav {
+	width: 96%;
+	position: absolute;
+	right: 2vw;
+	top: 2vw;
+	z-index: 10;
+	display: flex;
+	justify-content: space-around;
+	background-color: $secondary;
+	//transform: translate3d(0, -100px, 0);
+	transition: transform .2s ease-out;
+	//transform: translate3d(0, 0, 0);
+	@include box-shadow();
+	@media #{$large-up} { /*1200++*/
+		position: fixed;
+		width: 66%;
+	}
+	@media #{$large-only} { /*1200-1400*/
+		height: 3.5vw;
+		line-height: 3.5vw;
+	}
+	@media #{$xlarge-up} { /*1400+*/
+		width: 61%;
+		height: 2.5vw;
+		line-height: 2.5vw;
+	}
+}
+.nav--fixed {
+	position: fixed;
+	transform: translate3d(0, 10px, 0);
+	@media #{$xlarge-up} { /*1400+*/
+		transform: translate3d(0, -20px, 0);
+		width: 61%;
+	}
+}
+/* This is the Javascript jump
+.js-yes .nav {
+	transform: translate3d(0, -100px, 0);
+	transition: transform .2s ease-out;
+}
+.page-loaded .nav {
+	transform: translate3d(0, 0, 0)
+}
+.page-loaded .js-nav_fixed {
+	transform: translate3d(0, -20px, 0)
+}
+
+@media screen and (max-width:1200px) { //1400--
+
+.page-loaded .js-nav_fixed {
+	position: fixed;
+	left: 0;
+	top: 0;
+	transform: translate3d(0, 10px, 0);
+	width: 100%;
+}
+}
+*/
+.nav__link {
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: middle;
+	width: 16.666667%;
+	color: $default; //#FFF;
+	font-weight: 700;
+	letter-spacing: .05rem;
+	text-transform: uppercase;
+	text-align: center;
+	transition: background-color .4s ease-out;
+	padding: 1.5rem 0;
+	.nav__icon:before {
+		color: $default; //#FFF;
+	}
+	&:hover > .nav__icon {
+		transform: rotateY(0deg);
+	}
+	@media #{$large-up} { /*1200+*/
+		padding: 0;
+	}
+	&:hover, &:focus, &.nav__link--active {
+		background-color: $default; //#FFF;
+		color: $secondary;
+	}
+	&:hover .nav__icon:before, &:focus .nav__icon:before {
+		color: $secondary;
+	}
+	> .nav__icon {
+		display: block;
+		@media #{$medium-up} { /*1200+*/
+			display: inline-block;
+		}
+	}
+}
+.nav__link--active {
+	> .nav__icon:before {
+		color: $secondary;
+	}
+}
+.nav__label {
+	display: none;
+	font-size: 1.25rem;
+	@media #{$medium-up} { /*480+*/
+		font-size: inherit;
+		display: inline-block;
+	}
+}
+.nav__icon { //icon flip .page-loaded .js-nav__link_active 
+	display: block;
+	vertical-align: middle;
+	margin-bottom: .50rem;
+	padding-top: .50rem;
+	transform: rotateY(360deg);
+	transition: transform .5s ease-out;
+	&:before {
+		color: #fff;
+	}
+	@media #{$medium-up} { /*480+*/
+		padding-top: 0;
+		display: inline-block;
+	}
+	
+}

@@ -1,0 +1,105 @@
+.container {
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	@media #{$large-only} { /*1200-1400*/
+		width: 70%;
+		margin-left: 30%;
+	}
+	@media #{$xlarge-up} { /*1400+*/
+		width: 65%;
+		margin-left: 35%;
+	}
+}
+.content {
+	padding-top: 9rem;
+	box-sizing: border-box;
+	@media #{$large-only} { /*1200-1400*/
+		padding-top: 7rem;
+	}
+	@media #{$large-only} { /*1200-1400*/
+		padding-top: .5vw;
+	}
+	@media #{$xlarge-up} { /*1400+*/
+		padding-top: .4vw
+	}
+	&.ng-enter, &.ng-leave {
+		transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.4s;
+		//display: inline-block;
+	}
+	&.ng-enter {
+		transform: translate3d(0, 120%, 0);
+		z-index: 2;
+	}
+	&.ng-enter.ng-enter-active {
+		transform: translate3d(0, 0, 0);
+		z-index: 2;	
+		opacity: 1;
+	}
+	&.ng-leave.ng-leave-active {
+		transition-duration: .9s;
+		transform: translate3d(0, 100%, 0);
+		opacity: 0;
+	}
+}
+.content__section {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	padding-bottom: 5rem;
+	margin-bottom: 5rem;
+	border-bottom: .1rem dashed $inverse;
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		border-bottom: none;
+	}
+}
+.pages {
+	padding: 2vw 2vw 1rem;
+	overflow-y: hidden;
+	width: 100%;
+	box-sizing: border-box;
+	@media #{$large-up} { /*1400+*/
+		min-height: 86vh;
+	}
+}
+.iconboxs {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+.interests__iconbox {
+	height: 450px;
+	width: 85%;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	align-content: center;
+	margin: auto;
+	@media #{$medium-up} { /*1200+*/
+		height: 300px;
+		width: 95%;
+		flex-flow: row wrap;
+		justify-content: center;
+	}
+	@media #{$large-up} { /*1200+*/
+		height: 400px
+	}
+	.icon {
+		padding: 3rem;
+	}
+}
+.progress__bars {
+	display: block;
+}
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+}
+.footer {
+	padding: 2rem 0;
+	text-align: center;
+	font-size: 1.2rem;
+	transform: translate3d(0, 0, 0)
+}

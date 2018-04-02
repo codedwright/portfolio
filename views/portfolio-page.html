@@ -1,0 +1,26 @@
+<div class="pages">
+	<div class="page">
+		<div class="page__inner">
+			<h2 class="title title__main">
+				<span class="title__main--decoration">{{ portfolioDetails.title.length ? portfolioDetails.title : 'Item Not Found' }}</span>
+			</h2>
+			<div class="content__section">
+				<blockquote class="blockquote">
+					<i class="icon blockquote__quote blockquote__quote--left im-quote-left"></i>
+					<p>{{ portfolioDetails.excerpt.length ? portfolioDetails.excerpt : 'The page you requested could not be found, please try refreshing the page or contact joseph@codedwright.com' }}</p>
+					<i class="icon blockquote__quote blockquote__quote--right im-quote-right"></i>
+				</blockquote>
+			</div>
+			<div class="content__section">
+				<h3 class="title title__middle">
+					<i class="icon icon--small main-icon im-embed"></i>
+					<span class="title__label">{{ portfolioDetails.title }}</span>
+                </h3>
+                <a ng-hide="portfolioDetails.title.length" ng-href="portfolio" class="btn download" style="display: block">
+                    <i class="icon icon__link im-tablet"></i>
+                    <span class="download__label">View portfolio</span>
+                </a>
+			</div>
+		</div>
+	</div>
+</div>

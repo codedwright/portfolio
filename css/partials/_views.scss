@@ -1,0 +1,377 @@
+// Page
+.page {
+	@include box-shadow(); 
+	background-color: $default; //#FFF;
+	position: relative;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	width: 100%;
+	box-sizing: border-box;
+	&:after {
+		content: "";
+		display: block;
+		//background-color: #303F9F;
+		width: 0;
+		height: 5rem;
+		position: absolute;
+		top: 0;
+		border: 1.5em solid $primary;
+		border-top-width: 1.5em;
+		border-bottom-color: transparent;
+		transition: height 0.5s;
+		right: 2rem;
+		@media #{$xlarge-up} { /*1400+*/
+			right: 4rem;
+		}
+	}
+}
+.page {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+.page__inner {
+	padding-right: 2rem;
+	padding-left: 2rem;
+	@media #{$xlarge-up} { /*1400+*/
+		padding-right: 4rem;
+		padding-left: 4rem;
+	}
+}
+// Title
+.title, h2 {
+	font-size: 2.4rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 3.5rem;
+	margin-bottom: 1.5rem;
+}
+.title__middle {
+	@extend .title;
+	font-size: 2.2rem;
+	line-height: 3rem;
+	margin-bottom: 3rem;
+}
+.title__small, h4 {
+	@extend .title;
+	font-size: 1.8rem;
+	line-height: 2.5rem;
+}
+.title__little, h5 {
+	@extend .title;
+	font-size: 1.4rem;
+	line-height: 1.9rem;
+}
+.title__label {
+	display: inline-block;
+	vertical-align: middle;
+}
+.title__main {
+	@extend .title;
+	letter-spacing: .1rem;
+	text-align: center;
+	margin-bottom: 5rem;
+}
+.title__main--decoration {
+	background-color: $default; //#FFF;
+	position: relative;
+	&:before, &:after {
+		content: "";
+		display: block;
+		width: 7.5rem;
+		height: 1px;
+		background-color: $inverse; //#C5CAE9;
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+	&:before {
+		left: -9.5rem;
+	}
+	&:after {
+		right: -9.5rem;
+	}
+}
+.title__label {
+	background-color: $default; //#FFF;
+	padding-left: .5rem;
+}
+// Icons
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+	&:before {
+		font-size: 3.6rem;
+		color: $primary;
+		@media #{$medium-up} { /*480+*/
+			font-size: 1.6rem;
+		}
+	}
+	
+	@media #{$large-up} { /*1200+*/
+		display: inline-block;
+	}
+}
+.icon--small:before {
+	font-size: 2.4rem;
+}
+.icon--medium:before {
+	font-size: 3.2rem;
+}
+.icon--large:before {
+	font-size: 4.8rem;
+}
+.icon--main:before {
+	color: $secondary;
+}
+// Blockquote
+.blockquote {
+	position: relative;
+	padding: 0 4.5rem;
+	box-sizing: border-box;
+	border-left: .5rem solid #303F9F;
+}
+.blockquote__quote {
+	@extend .icon--small;
+	position: absolute;
+	&:before {
+		color: #303F9F;
+	}
+}
+.blockquote__quote--left {
+	top: 0;
+	left: 1rem;
+}
+.blockquote__quote--right {
+	bottom: 0;
+	right: 1rem;
+}
+// Buttons
+.btn {
+	display: inline-block;
+	padding: 1rem 2rem;
+	text-align: center;
+	border: .2rem solid $secondary; //#303F9F;
+	background-color: $default; //#FFF;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: $secondary; //#303F9F;
+	text-transform: uppercase;
+	&:hover, &:focus {
+		background-color: $secondary; //#303F9F;
+		color: $default; //#FFF;
+	}
+	&:hover .icon__link:before, &:focus .icon__link:before {
+		color: $default; //#FFF;
+	}
+}
+.link-flat {
+	@extend .btn;
+	align-self: flex-start;
+	padding: 1rem 1.7rem;
+	font-size: 1.5rem;
+	border-width: .1rem;
+	margin: 0 auto;
+	@media #{$xlarge-up} { /*1200+*/
+		padding: 1rem 1.3rem;
+		font-size: 1.2rem;
+	}
+}
+// Cards
+.card {
+	@include box-shadow(); 
+	background-color: $default; //#FFF;
+	box-sizing: border-box;
+	margin-top: 1.5vw;
+	&:hover .card__avatar {
+		transform: rotateY(1080deg);
+	}
+}
+.card:nth-of-type(1), .card:nth-of-type(2) {
+	margin-top: 0
+}
+
+@media screen and (max-width:1399px) {
+.card {
+	width: 49%
+}
+.card:nth-of-type(2n+2) {
+	margin-left: 1%
+}
+.card:nth-of-type(2n+1) {
+	margin-right: 1%
+}
+}
+
+@media screen and (min-width:1400px) and (max-width:2099px) {
+.card {
+	width: 32.5%;
+	margin-top: .7vw
+}
+.card:nth-of-type(3) {
+	margin-top: 0
+}
+.card:nth-of-type(3n+2) {
+	margin-left: 1%;
+	margin-right: 1%
+}
+}
+
+@media screen and (min-width:2100px) {
+.card {
+	width: 23.5%;
+	margin-top: 1.9vw
+}
+.card:nth-of-type(3), .card:nth-of-type(4) {
+	margin-top: 0
+}
+.card:nth-of-type(4n+2) {
+	margin-left: 2%;
+	margin-right: 1%
+}
+.card:nth-of-type(4n+3) {
+	margin-right: 2%;
+	margin-left: 1%
+}
+}
+
+@media screen and (max-width:480px) {
+.card {
+	width: 100%;
+	margin-top: 2rem
+	
+}
+.card:nth-of-type(2), .card:nth-of-type(3), .card:nth-of-type(4) {
+	margin-top: 2rem
+}
+.card:nth-of-type(2n+2), .card:nth-of-type(2n+1) {
+	margin-left: 0;
+	margin-right: 0
+}
+}
+.card_bg-yes {
+	background-color: $primary; //#3F51B5;
+	color: $default; //#FFF;
+}
+.card_bg-yes .card__title {
+	color: $default; //#FFF;
+}
+.card_bg-yes .card__caption {
+	color: $inverse; //#C5CAE9;
+	margin-top: .3rem
+}
+.card_bg-yes .card__content {
+	text-align: center
+}
+.card__header {
+	position: relative;
+	overflow: hidden;
+	border-bottom: .5rem solid #303F9F;
+	font-size: 0
+}
+.card__date {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 2;
+	font-size: 1.2rem;
+	color: $default; //#FFF;
+	padding: .5rem 2.5rem;
+	background-color: #303F9F;
+	@include box-shadow(); 
+}
+.card__iconbox {
+	padding: 2rem 0;
+	text-align: center;
+	position: relative
+}
+.card__iconbox:after {
+	content: "";
+	display: block;
+	background-color: $default; //#FFF;
+	width: 4rem;
+	height: .3rem;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate3d(-50%, 0, 0)
+}
+.card__icon {
+	border: .3rem solid $default; //#FFF;
+	border-radius: 50%;
+	position: relative;
+	box-sizing: border-box;
+	width: 8rem;
+	height: 8rem
+}
+.card__icon:before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	color: $default; //#FFF;
+}
+.card__avatar {
+	border: .5rem solid #fff;
+	border-radius: 50%;
+	position: relative;
+	width: 10rem;
+	height: 10rem;
+	transform: rotateY(0deg);
+	transition: transform 5s ease-out;
+	
+}
+.card__caption {
+	display: block;
+	font-weight: 400;
+	color: $primary; //#3F51B5;
+}
+.card__content {
+	box-sizing: border-box;
+	padding: 2rem
+}
+.card__description {
+	margin-top: 1.5rem
+}
+.card__blockquote {
+	padding: 0 2rem;
+	box-sizing: border-box;
+	position: relative
+}
+.card__quote {
+	@extend .icon--small;
+	position: absolute
+}
+.card__quote:before {
+	color: $default; //#FFF;
+}
+.card__quote-left {
+	top: 0;
+	left: 0
+}
+.card__quote-right {
+	bottom: 0;
+	right: 0
+}
+.card__footer {
+	border-top: .1rem solid $inverse; //#C5CAE9;
+	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center
+}
+
+.admin__message {
+	transition: all linear 0.5s;
+	background-color: $primary;
+	color: $inverse;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	height: auto;
+	font-size: $font-size!important;
+	text-align: center;
+	&.ng-hide {
+		height: 0;
+		opacity: 0;
+	}
+}
+  

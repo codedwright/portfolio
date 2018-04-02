@@ -1,0 +1,17 @@
+.tags {
+	width: 100%;
+	max-width: 60%;
+	line-height: 2.5rem;
+}
+.tags__item {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: .5rem;
+	font-weight: 700;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+.tags__hashtag {
+	color: $secondary; //#303F9F;
+}

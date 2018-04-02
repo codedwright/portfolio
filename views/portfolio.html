@@ -1,0 +1,77 @@
+<div class="pages">
+	<div class="page">
+		<div class="page__inner">
+			<h2 class="title title__main">
+				<span class="title__main--decoration">Portfolio</span>
+			</h2>
+			<div class="content__section">
+				<blockquote class="blockquote">
+					<i class="icon blockquote__quote blockquote__quote--left im-quote-left"></i>
+					<p>Your website is an important tool in connecting with your customers and is accomplished through passionate production
+						of a perfect and clear message for your website or application. Through brand strategy, wireframing and prototyping
+						and finally the central web design, your vision will come to life.</p>
+					<p>Here is a sampling of my work. Feel free to click any card to view more infomation or click "Live Demo" to see it in your browser! </p>
+					<i class="icon blockquote__quote blockquote__quote--right im-quote-right"></i>
+				</blockquote>
+			</div>
+			<div class="content__section">
+				<h3 class="title title__middle">
+					<i class="icon icon--small main-icon im-windows"></i>
+					<span class="title__label">Professional Projects</span>
+				</h3>
+				<div class="cards">
+					<article class="card" ng-repeat="entry in portfolio | filter: {portfolioId: '1'}">
+						<header class="card__header" ng-click="url(entry.link)">
+							<img src="{{ entry.thumbnail }}" class="responsive-img card__img" alt="{{ entry.title | uppercase }} Thumbnail">
+						</header>
+						<div class="card__content" ng-click="url(entry.link)">
+							<h4 class="title title_small card__title">{{ entry.title }}</h4>
+							<div class="card__description">
+								<p>{{ entry.excerpt }}</p>
+							</div>
+						</div>
+						<footer class="card__footer">
+							<div class="tags">
+								<i class="icon im-local_offer"></i>
+								<span class="tags__item tags__label">Tags:</span>
+								<span ng-if="entry.tags" ng-repeat="tag in entry.tags.split(', ')" class="tags__item tags__hashtag">
+									<a href="#">#{{ tag }}</a>
+								</span>
+							</div>
+							<a href="{{ entry.link }}" target="_blank" class="link-flat">Live Demo</a>
+						</footer>
+					</article>
+				</div>
+			</div>
+			<div class="content__section">
+				<h3 class="title title__middle">
+					<i class="icon icon--small main-icon fa fa-flask"></i>
+					<span class="title__label">Sandbox / Experiments</span>
+				</h3>
+				<div class="cards">
+					<article class="card" ng-repeat="entry in portfolio | filter: {portfolioId: '1'} : true">
+						<header class="card__header" ng-click="url(entry.link)">
+							<img src="{{ entry.thumbnail }}" class="responsive-img card__img" alt="{{ entry.title | uppercase }} Thumbnail">
+						</header>
+						<div class="card__content" ng-click="url(entry.link)">
+							<h4  class="title title_small card__title">{{ entry.title }}</h4>
+							<div class="card__description">
+								<p>{{ entry.excerpt }}</p>
+							</div>
+						</div>
+						<footer class="card__footer">
+							<div class="tags">
+								<i class="icon im-local_offer"></i>
+								<span class="tags__item tags__label">Tags:</span>
+								<span ng-if="entry.tags" ng-repeat="tag in entry.tags.split(', ')" class="tags__item tags__hashtag">
+									<a href="#">#{{ tag }}</a>
+								</span>
+							</div>
+							<a href="{{ entry.demo }}" target="_blank" class="link-flat">Live Demo</a>
+						</footer>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

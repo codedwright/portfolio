@@ -1,0 +1,98 @@
+<div class="pages">
+	<section class="page">
+		<div class="page__inner">
+			<h2 class="title title__main">
+				<span class="title__main--decoration">Contacts</span>
+			</h2>
+			<div class="content__section">
+				<div class="iconboxs">
+					<div class="iconbox">
+						<a href="mailto:joseph@codedwright.com" target="_blank">
+							<i class="icon icon--medium iconbox__icon im-envelope-square"></i>
+						</a>
+						<div class="iconbox__info">
+							<span class="iconbox__label iconbox__name">E-mail</span>
+							<span class="iconbox__label contact__label">Joseph@codedwright.com</span>
+						</div>
+					</div>
+					<div class="iconbox">
+						<a href="https://www.linkedin.com/in/codedwright/">
+							<i class="icon icon--medium iconbox__icon fa fa-linkedin-square"></i>
+						</a>
+						<div class="iconbox__info">
+							<span class="iconbox__label iconbox__name">LinkedIn</span>
+							<span class="iconbox__label contact__label">codedwright</span>
+						</div>
+					</div>
+					<div class="iconbox">
+						<a href="tel:2607559083" target="_blank">
+							<i class="icon icon--medium iconbox__icon fa fa-phone-square"></i>
+						</a>
+						<div class="iconbox__info">
+							<span class="iconbox__label iconbox__name">Phone</span>
+							<span class="iconbox__label contact__label">(260) 755-9083</span>
+						</div>
+					</div>
+					<div class="iconbox">
+						<a href="https://github.com/codedwright" target="_blank">
+							<i class="icon icon--medium iconbox__icon fa fa-github-square"></i>
+						</a>
+						<div class="iconbox__info">
+							<span class="iconbox__label iconbox__name">Github</span>
+							<span class="iconbox__label contact__label">codedwright</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content__section map" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}">
+				<ng-map center="41.0793,-85.1394" zoom="18" tilt="45" map-type-id="SATELLITE"></ng-map>
+			</div>
+			<div class="content__section">
+				<h3 class="title title_middle">
+					<i class="icon icon--small icon--main im-address-book"></i>
+					<span class="title__label">Contact form</span>
+				</h3>
+				<ng-form="contact" class="form">
+					<div class="form__inner">
+						<div class="form__group form__column">
+							<input type="text" class="form__element field" ng-model="contact.by" placeholder="Your Name">
+							<i class="icon form__icon im-user"></i>
+							<span class="form__decor-line"></span>
+						</div>
+						<div class="form__group form__column">
+							<input type="email" class="form__element field" ng-model="contact.from" placeholder="Your Email">
+							<i class="icon form__icon im-envelope"></i>
+							<span class="form__decor-line"></span>
+						</div>
+					</div>
+					<div class="form__group">
+						<select class="form__element select" ng-model="contact.subject">
+							<option class="select__option" value="">Subject</option>
+							<option class="select__option" value="work">Work</option>
+							<option class="select__option" value="subject">Testimonial</option>
+							<option class="select__option" value="other">Other</option>
+						</select>
+						<i class="icon form__icon im-book"></i>
+					</div>
+					<div class="form__group">
+						<textarea class="form__element field textarea" ng-model="contact.message" placeholder="Your Message" ></textarea>
+						<i class="icon form__icon im-bubbles"></i>
+						<span class="form__decor-line"></span>
+					</div>
+					<div ng-show="message" class="form__group form__row admin__message" ng-bind-html="message"></div>
+					<div class="form__button-box">
+						<button ng-click="mail(contact)" class="button">Send</button>
+					</div>
+				</form>
+				<div class="social contacts__social">
+					<a href="http://www.github.com/codedwright" target="_blank" class="icon social__iconz im-github">
+						<span class="social__name">GitHub</span>
+					</a>
+					<a href="http://www.linkedin.com/codedwright" target="_blank" class="icon social__iconz im-linkedin">
+						<span class="social__name">LinkedIn</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
