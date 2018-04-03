@@ -106,6 +106,26 @@ module.exports = function(grunt) {
 			}
 		},
 
+		bump: {
+			options: {
+				files: ['package.json'],
+				updateConfigs: [],
+				commit: true,
+				commitMessage: 'Release v%VERSION%',
+				commitFiles: ['package.json'],
+				createTag: true,
+				tagName: 'v%VERSION%',
+				tagMessage: 'Version %VERSION%',
+				push: true,
+				pushTo: 'origin',
+				gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+				globalReplace: false,
+				prereleaseName: false,
+				metadata: '',
+				regExp: false
+			}
+		},
+
 		watch: {
 			options: {
 		    	livereload: true
@@ -128,7 +148,7 @@ module.exports = function(grunt) {
 	});
 
 	// Load the plugin that provides the "uglify" task.
-	// grunt.loadNpmTasks('grunt-bump');
+	
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
@@ -139,4 +159,8 @@ module.exports = function(grunt) {
 	// Default task(s).
 	grunt.registerTask('default', ['concat', 'uglify']);
 	grunt.registerTask('deploy', ['ftp-deploy']);
+
+	// https://github.com/semantic-release/semantic-release
+	// https://docs.npmjs.com/getting-started/semantic-versioning
+	grunt.loadNpmTasks('grunt-bump');
 };
