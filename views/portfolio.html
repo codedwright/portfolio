@@ -20,7 +20,7 @@
 					<span class="title__label">Professional Projects</span>
 				</h3>
 				<div class="cards">
-					<article class="card" ng-repeat="entry in portfolio | filter: {portfolioId: '1'}">
+					<article class="card" ng-repeat="entry in portfolio | filter: {category: 'projects'}">
 						<header class="card__header" ng-click="url(entry.link)">
 							<img src="{{ entry.thumbnail }}" class="responsive-img card__img" alt="{{ entry.title | uppercase }} Thumbnail">
 						</header>
@@ -49,7 +49,7 @@
 					<span class="title__label">Sandbox / Experiments</span>
 				</h3>
 				<div class="cards">
-					<article class="card" ng-repeat="entry in portfolio | filter: {portfolioId: '1'} : true">
+					<article class="card" ng-repeat="entry in portfolio | filter: {category: 'experiments'} : true">
 						<header class="card__header" ng-click="url(entry.link)">
 							<img src="{{ entry.thumbnail }}" class="responsive-img card__img" alt="{{ entry.title | uppercase }} Thumbnail">
 						</header>
