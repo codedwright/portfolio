@@ -72,3 +72,6 @@ php/md5.php
 
 # assets
 assets/
+
+# ftp
+.ftppass

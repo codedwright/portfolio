@@ -80,6 +80,32 @@ module.exports = function(grunt) {
 		},
 
 
+		'ftp-deploy': {
+			build: {
+				auth: {
+					host: 'ftp.codedwright.com',
+					port: 21,
+					authKey: 'key1'
+				},
+				src: './',
+				dest: '/public_html/',
+				exclusions: [
+					'**/.DS_Store',
+					'./.sass-cache',
+					'./css/partials',
+					'./css/font-awesome',
+					'./css/style.scss',
+					'./css/style.css.map',
+					'./js',
+					'./legacy',
+					'./node_modules',
+					'./.gitignore',
+					'./package-lock.json',
+					'./.git'
+				]
+			}
+		},
+
 		watch: {
 			options: {
 		    	livereload: true
@@ -102,13 +128,15 @@ module.exports = function(grunt) {
 	});
 
 	// Load the plugin that provides the "uglify" task.
+	// grunt.loadNpmTasks('grunt-bump');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify-es');
+	grunt.loadNpmTasks('grunt-ftp-deploy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s).
 	grunt.registerTask('default', ['concat', 'uglify']);
-
+	grunt.registerTask('deploy', ['ftp-deploy']);
 };
