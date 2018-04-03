@@ -7,7 +7,7 @@ $primary: #3F51B5;				//	$primary; //#3F51B5;
 $secondary: #303F9F;			//	$secondary; //#303F9F;
 $inverse: #C5CAE9;				//	$inverse; //#C5CAE9;
 $lg-font-size: 9.5px; // 10px	
-$md-font-size: 8.5px; // 8px
+$md-font-size: 9px; // 8px
 $sm-font-size: 7.5px; // 6.5px
 $font-size: 1.4rem;				
 @mixin box-shadow() { 			//	@include box-shadow(); 
@@ -85,9 +85,6 @@ html {
 	font-size: $lg-font-size;
 	@media #{$medium-up} { /*480+*/
 		font-size: $md-font-size;
-	}
-	@media #{$large-up} { /*1200+*/
-		font-size: $sm-font-size;
 	}
 }
 body {
