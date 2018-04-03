@@ -102,7 +102,7 @@
 	&:before {
 		font-size: 3.6rem;
 		color: $primary;
-		@media #{$medium-up} { /*480+*/
+		@media only screen and (min-width: 640px) {
 			font-size: 1.6rem;
 		}
 	}

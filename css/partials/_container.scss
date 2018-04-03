@@ -70,25 +70,34 @@
 	flex-flow: row wrap;
 }
 .interests__iconbox {
-	height: 450px;
+	height: 500px;
 	width: 85%;
 	display: flex;
 	flex-flow: column wrap;
 	align-items: center;
 	align-content: center;
 	margin: auto;
+	&>.icon {
+		padding: 1.5rem;
+	}
 	@media #{$medium-up} { /*1200+*/
-		height: 300px;
 		width: 95%;
 		flex-flow: row wrap;
 		justify-content: center;
+		&>.icon {
+			padding: 2.5rem;
+		}
+	}
+	@media only screen and (min-width: 640px) {
+		height: 400px;
 	}
 	@media #{$large-up} { /*1200+*/
-		height: 400px
+		height: 300px;
+		&>.icon {
+			padding: 3rem;
+		}
 	}
-	.icon {
-		padding: 3rem;
-	}
+	
 }
 .progress__bars {
 	display: block;

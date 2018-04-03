@@ -113,7 +113,7 @@
 .nav__label {
 	display: none;
 	font-size: 1.25rem;
-	@media #{$medium-up} { /*480+*/
+	@media only screen and (min-width: 640px) {
 		font-size: inherit;
 		display: inline-block;
 	}
