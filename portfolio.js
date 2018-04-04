@@ -49,7 +49,7 @@ app.controller('BaseController', ['$scope', '$location', '$filter', '$routeParam
     // Why did I need this??
     $scope.url = (link) => {
         $location.url('/portfolio/' + link);
-        console.log('Navigating to ./portfolio/' + link);
+        console.log('Navigating to ./portfolio/' + link);;
     }
 
     
