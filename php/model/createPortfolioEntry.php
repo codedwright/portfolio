@@ -16,6 +16,11 @@
         } else {
             $error .= 'excerpt ';
         }
+        if(isset($_POST['content']) && !empty($_POST['content'])){
+            $content = $_POST['content'];
+        } else {
+            $error .= 'content ';
+        }
         if(isset($_POST['link']) && !empty($_POST['link'])){
             $link = $_POST['link'];
         } else {
@@ -36,18 +41,18 @@
         } else {
             $error .= 'demo ';
         }
-        if(isset($title, $thumbnail, $excerpt, $link, $category, $tags, $demo)) {
-            writePortfolioEntry($_POST['title'], $_POST['thumbnail'], $_POST['excerpt'], $_POST['link'], $_POST['category'], $_POST['tags'], $_POST['demo']);
+        if(isset($title, $thumbnail, $excerpt, $content, $link, $category, $tags, $demo)) {
+            writePortfolioEntry($_POST['title'], $_POST['thumbnail'], $_POST['excerpt'], $_POST['content'], $_POST['link'], $_POST['category'], $_POST['tags'], $_POST['demo']);
         } else {
             return $error;
         }
     }
 
-    function writePortfolioEntry($title, $thumbnail, $excerpt, $link, $category, $tags, $demo) {
+    function writePortfolioEntry($title, $thumbnail, $excerpt, $content, $link, $category, $tags, $demo) {
         try {
             global $db;
             // $sql = "INSERT INTO blog (title, thumbnail, date, excerpt, content, tags, link) VALUES ('$title', '$thumbnail', '$date', '$excerpt', '$content', '$tags', '$link')";
-            $sql = "INSERT INTO portfolio (title, thumbnail, excerpt, link, category, tags, demo) VALUES ('$title', '$thumbnail', '$excerpt', '$link', '$category', '$tags', '$demo')";
+            $sql = "INSERT INTO portfolio (title, thumbnail, excerpt, content, link, category, tags, demo) VALUES ('$title', '$thumbnail', '$excerpt', '$content', '$link', '$category', '$tags', '$demo')";
             echo $sql;
             return $db->exec($sql); // returns a number of affected rows
         } catch(PDOException $e) {

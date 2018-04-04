@@ -15,7 +15,8 @@
 				<h3 class="title title__middle">
 					<i class="icon icon--small main-icon im-embed"></i>
 					<span class="title__label">{{ portfolioDetails.title }}</span>
-                </h3>
+				</h3>
+				<p ng-show="portfolioDetails.title.length">{{ portfolioDetails.content }}</p>
                 <a ng-hide="portfolioDetails.title.length" ng-href="portfolio" class="btn download" style="display: block">
                     <i class="icon icon__link im-tablet"></i>
                     <span class="download__label">View portfolio</span>

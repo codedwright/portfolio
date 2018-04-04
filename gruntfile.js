@@ -28,8 +28,11 @@ module.exports = function(grunt) {
 					'node_modules/angular/angular.min.js', 
 					'node_modules/angular-route/angular-route.min.js',
 					'node_modules/angular-animate/angular-animate.min.js',
-					'node_modules/angular-sanitize/angular-sanitize.min.js',
+					'node_modules/angular-sanitize/angular-sanitize.js',
 					'node_modules/ngmap/build/scripts/ng-map.min.js',
+					'node_modules/textangular/dist/textAngular-rangy.min.js',
+					'node_modules/textangular/dist/textAngular-sanitize.min.js', 
+					'node_modules/textangular/dist/textAngular.min.js', 
 				],
                 dest: 'scripts.js'
 			},

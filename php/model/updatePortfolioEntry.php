@@ -20,6 +20,12 @@
         } else {
             $error .= 'excerpt ';
         }
+        if(isset($_POST['content']) && !empty($_POST['content'])){
+            $content = $_POST['content'];
+            $message .= "content: $content ";
+        } else {
+            $error .= 'content ';
+        }
         if(isset($_POST['link']) && !empty($_POST['link'])){
             $link = $_POST['link'];
             $message .= "link: $links ";
@@ -44,7 +50,7 @@
         } else {
             $error .= 'demo ';
         }
-        if(isset($title) || isset($thumbnail) || isset($excerpt) || isset($link) || isset($category) || isset($tags) || isset($demo)) {
+        if(isset($title) || isset($thumbnail) || isset($excerpt) || isset($content) || isset($link) || isset($category) || isset($tags) || isset($demo)) {
             //return $message;
             $sql = "UPDATE portfolio SET ";
             if(isset($title)) {
@@ -53,6 +59,8 @@
                 $sql .= "thumbnail = '$thumbnail', ";
             } else if(isset($excerpt)) {
                 $sql .= "excerpt = '$excerpt', ";
+            } else if(isset($content)) {
+                $sql .= "content = '$content', ";
             } else if(isset($link)) {
                 $sql .= "link = '$link', ";
             } else if(isset($category)) {

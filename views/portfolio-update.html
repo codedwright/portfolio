@@ -23,7 +23,7 @@
                                 <span class="form__decor-line"></span>
                             </div>
                             <div class="form__group form__row">
-                                <select class="form__element select" ng-options="option.title for option in portfolio track by option.portfolioId" ng-model="update">
+                                <select class="form__element select" ng-options="option.title for option in portfolio track by option.portfolioId" ng-model="update" ng-change="updatePortfolioContent()">
                                     <option value="">-- Choose --</option>
                                 </select>
                                 <i class="icon form__icon im-book"></i>
@@ -41,6 +41,11 @@
                             </div>
                             <div class="form__group form__row">
                                 <textarea class="form__element field textarea" ng-model="updatePortfolioEntry.excerpt" placeholder="Excerpt" ng-value="update.excerpt" rows="4"></textarea>
+                                <i class="icon form__icon fa fa-plus-circle"></i>
+                                <span class="form__decor-line"></span>
+                            </div>
+                            <div class="form__group form__row">
+                                <text-angular ta-toolbar="[['h1','h2','h3','h4','h5','h6','p','pre','quote','bold','italics','underline','strikeThrough','ul','ol','undo','redo','clear','justifyLeft','justifyCenter','justifyRight','justifyFull','indent','outdent','html','insertImage','insertLink','insertVideo','wordcount','charcount']]" class="form__element field textarea" ng-model="updatePortfolioEntry.content" placeholder="Content" rows="8"></text-angular>
                                 <i class="icon form__icon fa fa-plus-circle"></i>
                                 <span class="form__decor-line"></span>
                             </div>

@@ -1,5 +1,5 @@
 /*!
- * Portfolio v.2.0.0
+ * Portfolio v.2.0.13
  * Copyright (c) 2018 Foo.
  *
  * Author: Joseph Wright (joseph@codedwright.com).
@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 
 
-var app = angular.module('portfolio', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ngMap']);
+var app = angular.module('portfolio', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ngMap', 'textAngular']);
 
 
 

@@ -164,6 +164,20 @@
 		color: $default; //#FFF;
 	}
 }
+.btn-group .btn {
+	display: inline-block!important;
+	padding: .5rem;
+	border: none;
+}
+.textarea textarea {
+	width: 100%!important;
+}
+.ta-scroll-window > .ta-bind {
+    height: auto;
+    min-height: 15rem;
+	padding: 1rem;
+	border: .2rem solid $secondary; //#303F9F;
+}
 .link-flat {
 	@extend .btn;
 	align-self: flex-start;

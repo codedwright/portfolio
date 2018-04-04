@@ -9,9 +9,17 @@ app.controller('BaseController', ['$scope', '$location', '$filter', '$routeParam
         $scope.blogDetails = ($filter('filter')(result.data, {'link': $routeParams.link}, true))[0];
     });
 
+    // Why did I need this??
     $scope.url = (link) => {
         $location.url('/portfolio/' + link);
         console.log('Navigating to ./portfolio/' + link);
+    }
+
+    
+    $scope.updatePortfolioEntry = {};
+    $scope.updatePortfolioContent = () => {
+        // this is the wrong way to do this...
+        $scope.updatePortfolioEntry.content = $scope.update.content;
     }
 
     // https://ngmap.github.io/     
