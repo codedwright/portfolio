@@ -23,3 +23,5 @@ After making changes:
 2. Write commit message according to [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines)
 3. Enforce [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning) with: `grunt bump:patch`, `grunt bump:minor`, `grunt bump:major` 
 4. Deploy with `grunt deploy`
+
+<small>Written with https://stackedit.io</small>
