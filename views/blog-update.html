@@ -40,11 +40,16 @@
                                 <span class="form__decor-line"></span>
                             </div>
                             <div class="form__group form__row">
-                                <textarea class="form__element field textarea" ng-model="updateBlogEntry.excerpt" placeholder="Excerpt" ng-value="update.excerpt"></textarea>
+                                <textarea class="form__element field textarea" ng-model="updateBlogEntry.excerpt" placeholder="Excerpt" ng-value="update.excerpt" rows="4"></textarea>
                                 <i class="icon form__icon fa fa-plus-circle"></i>
                                 <span class="form__decor-line"></span>
                             </div>
-                             <small class="form__tab"><i class="fa fa-angle-double-down"></i> ...comma separated list ("example, example, example")</small>
+                            <div class="form__group form__row">
+                                <textarea class="form__element field textarea" ng-model="updateBlogEntry.content" placeholder="Content" ng-value="update.content" rows="8"></textarea>
+                                <i class="icon form__icon fa fa-plus-circle"></i>
+                                <span class="form__decor-line"></span>
+                            </div>
+                            <small class="form__tab"><i class="fa fa-angle-double-down"></i> ...comma separated list ("example, example, example")</small>
                             <div class="form__group form__row">
                                 <input type="text" class="form__element field" ng-model="updateBlogEntry.tags" placeholder="Tags" ng-value="update.tags">
                                 <i class="icon form__icon fa fa-plus-circle"></i>
