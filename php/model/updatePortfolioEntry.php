@@ -55,19 +55,26 @@
             $sql = "UPDATE portfolio SET ";
             if(isset($title)) {
                 $sql .= "title = '$title', ";
-            } else if(isset($thumbnail)) {
+            }
+            if(isset($thumbnail)) {
                 $sql .= "thumbnail = '$thumbnail', ";
-            } else if(isset($excerpt)) {
+            }
+            if(isset($excerpt)) {
                 $sql .= "excerpt = '$excerpt', ";
-            } else if(isset($content)) {
+            }
+            if(isset($content)) {
                 $sql .= "content = '$content', ";
-            } else if(isset($link)) {
+            }
+            if(isset($link)) {
                 $sql .= "link = '$link', ";
-            } else if(isset($category)) {
+            }
+            if(isset($category)) {
                 $sql .= "category = '$category', ";
-            } else if(isset($tags)) {
+            }
+            if(isset($tags)) {
                 $sql .= "tags = '$tags', ";
-            } else if(isset($demo)) {
+            }
+            if(isset($demo)) {
                 $sql .= "demo = '$demo', ";
             }
             $portfolioId = (isset($_POST['portfolioId'])) ? $_POST['portfolioId'] : 'null';
