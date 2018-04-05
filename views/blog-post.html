@@ -16,7 +16,7 @@
 					<i class="icon icon--small main-icon im-embed"></i>
 					<span class="title__label">{{ blogDetails.title }}</span>
                 </h3>
-                <p ng-show="blogDetails.title.length">{{ blogDetails.content }}</p>
+                <p ng-show="blogDetails.title.length" ng-bind-html="blogDetails.content"></p>
                 <a ng-hide="blogDetails.title.length" ng-href="blog" class="btn download" style="display: block">
                     <i class="icon icon__link im-mode_edit"></i>
                     <span class="download__label">View blog</span>
