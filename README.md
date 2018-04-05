@@ -40,8 +40,8 @@ After making changes:
 # Known Issues
 
 [**Spread in object literals**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Browser_compatibility)
-The Rest/Spread Properties for ECMAScript proposal (stage 4) adds spread properties to object literals.
-Support is limited to Chrome v60+ (current 65) and Firefox v55+, without current support for Edge, IE, or Safari 
+The Rest/Spread Properties for ECMAScript proposal (stage 4) adds spread properties to object literals.  
+Support is limited to Chrome v60+ (current 65) and Firefox v55+, without current support for Edge, IE, or Safari. 
 
 # Storyboard
 
@@ -70,11 +70,11 @@ Support is limited to Chrome v60+ (current 65) and Firefox v55+, without current
 
 # Database Topology
 
-Using MySQL database with CPanel from Bluehost.
+Using MySQL database with CPanel from [Bluehost](https://www.bluehost.com/).
 
 ## Tables
 - portfolio
-    - portfolioID
+    - portfolioId
     - title
     - thumbnail
     - excerpt
@@ -83,7 +83,7 @@ Using MySQL database with CPanel from Bluehost.
     - tags
     - demo
 - blog
-    - blogID
+    - blogId
     - title
     - thumbnail
     - date
