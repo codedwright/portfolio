@@ -12,7 +12,7 @@
             $error .= 'thumbnail ';
         }
         if(isset($_POST['date']) && !empty($_POST['date'])){
-            $demo = $_POST['date'];
+            $date = date_format(date_create($_POST['date']),"Y-m-d");
         } else {
             $error .= 'date ';
         }
@@ -22,7 +22,7 @@
             $error .= 'excerpt ';
         }
         if(isset($_POST['content']) && !empty($_POST['content'])){
-            $link = $_POST['content'];
+            $content = $_POST['content'];
         } else {
             $error .= 'content ';
         }
@@ -32,12 +32,12 @@
             $error .= 'tags ';
         }
         if(isset($_POST['link']) && !empty($_POST['link'])){
-            $demo = $_POST['link'];
+            $link = $_POST['link'];
         } else {
             $error .= 'link ';
         }
         if(isset($title, $thumbnail, $date, $excerpt, $content, $tags, $link)) {
-            writeBlogEntry($_POST['title'], $_POST['thumbnail'], $_POST['excerpt'], $_POST['link'], $_POST['tags'], $_POST['demo']);
+            writeBlogEntry($title, $thumbnail, $date, $excerpt, $content, $tags, $link);//$_POST['title'], $_POST['thumbnail'], $_POST['excerpt'], $_POST['content'], $_POST['tags'], $_POST['demo']
         } else {
             return $error;
         }
