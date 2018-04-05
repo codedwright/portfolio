@@ -12,16 +12,19 @@
     * `Git: Clone Repo` 
     * `https://github.com/codedwright/portfolio.git`
  - Install packages `npm install` and make sure packages are updated
-     * `npm install -g npm-check-updates` use `ncu` to check for updates and `ncu -u` and `npm i` to update
+    * `npm install -g npm-check-updates` use `ncu` to check for updates and `ncu -u` and `npm i` to update
 ## Automated Tasks
 After making changes:
 -  Watch for file saves with `grunt watch` 
     - Concatenates JavaScript and runs Compass for Sass preprocessing  
-- `grunt  concat` concatenates JavaScript into portfolio.js and scripts.js
+- `grunt concat` concatenates JavaScript into portfolio.js and scripts.js
 - `grunt compass` preprocesses Sass and .scss files into styles.css
 1. After changes are made and files are saved stage changes to git
 2. Write commit message according to [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines)
 3. Enforce [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning) with: `grunt bump:patch`, `grunt bump:minor`, `grunt bump:major` 
 4. Deploy with `grunt deploy`
-
-<small>Written with https://stackedit.io</small>
+## Known Issues
+[**Spread in object literals**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Browser_compatibility)
+The Rest/Spread Properties for ECMAScript proposal (stage 4) adds spread properties to object literals.
+Support is limited to Chrome v60+ (current 65) and Firefox v55+, without current support for Edge, IE, or Safari 
+<small>Written on https://stackedit.io</small>
