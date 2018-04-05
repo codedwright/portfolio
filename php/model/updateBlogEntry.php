@@ -15,7 +15,7 @@
             $error .= 'thumbnail ';
         }
         if(isset($_POST['date']) && !empty($_POST['date'])){
-            $demo = $_POST['date'];
+            $date = date_format(date_create($_POST['date']),"Y-m-d");
             $message .= "date: $demo ";
         } else {
             $error .= 'date ';
@@ -40,7 +40,7 @@
         }
         if(isset($_POST['link']) && !empty($_POST['link'])){
             $link = $_POST['link'];
-            $message .= "link: $links ";
+            $message .= "link: $link ";
         } else {
             $error .= 'link ';
         }
@@ -48,17 +48,23 @@
             $sql = "UPDATE blog SET ";
             if(isset($title)) {
                 $sql .= "title = '$title', ";
-            } else if(isset($thumbnail)) {
+            }
+            if(isset($thumbnail)) {
                 $sql .= "thumbnail = '$thumbnail', ";
-            } else if(isset($date)) {
+            }
+            if(isset($date)) {
                 $sql .= "date = '$date', ";
-            } else if(isset($excerpt)) {
+            }
+            if(isset($excerpt)) {
                 $sql .= "excerpt = '$excerpt', ";
-            } else if(isset($content)) {
+            }
+            if(isset($content)) {
                 $sql .= "content = '$content', ";
-            } else if(isset($tags)) {
+            }
+            if(isset($tags)) {
                 $sql .= "tags = '$tags', ";
-            } else if(isset($link)) {
+            }
+            if(isset($link)) {
                 $sql .= "link = '$link', ";
             }
             $blogId = (isset($_POST['blogId'])) ? $_POST['blogId'] : 'null';
