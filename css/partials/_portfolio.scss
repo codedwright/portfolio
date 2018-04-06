@@ -15,3 +15,19 @@
 .tags__hashtag {
 	color: $secondary; //#303F9F;
 }
+.card__portfolio {
+	@extend .card;
+	@extend .card_bg-yes; 
+	i {
+		@extend .icon;
+		@extend .icon--large;
+		@extend .card__icon;
+		@extend .card__avatar;
+	}
+	&:hover i {
+		transform: rotateY(1080deg);
+	}
+	.btn {
+		margin: 0 auto;
+	}
+}
