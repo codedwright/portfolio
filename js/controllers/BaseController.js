@@ -72,7 +72,8 @@ app.controller('BaseController', ['$scope', '$location', '$filter', '$routeParam
         //     blogId: $scope.update.blogId,
         //     ...data
         // }));
-        portfolio.update(password, {portfolioId: $scope.update.portfolioId, ...data}).then((results) => {
+        data.portfolioId = $scope.update.portfolioId;
+        portfolio.update(password, data).then((results) => {
             console.log(results);
             $scope.message = results.data;
         }).then(() => {
@@ -110,7 +111,8 @@ app.controller('BaseController', ['$scope', '$location', '$filter', '$routeParam
         //     blogId: $scope.update.blogId,
         //     ...data
         // }));
-        blog.update(password, {blogId: $scope.update.blogId, ...data}).then((results) => {
+        data.blogId = $scope.update.blogId;
+        blog.update(password, data).then((results) => {
             console.log(results);
             $scope.message = results.data;
         }).then(() => {

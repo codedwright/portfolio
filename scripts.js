@@ -1,5 +1,5 @@
 /*!
- * Portfolio v.2.1.1
+ * Portfolio v.2.1.8
  * Copyright (c) 2018 Foo.
  *
  * Author: Joseph Wright (joseph@codedwright.com).

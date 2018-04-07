@@ -65,6 +65,7 @@ typings/
 
 # js
 legacy/
+**.map
 
 # php
 php/connect.php

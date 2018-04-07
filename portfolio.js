@@ -1,5 +1,5 @@
 /*!
- * Portfolio v.2.1.1
+ * Portfolio v.2.1.8
  * Copyright (c) 2018 Foo.
  *
  * Author: Joseph Wright (joseph@codedwright.com).
@@ -49,7 +49,7 @@ app.controller('BaseController', ['$scope', '$location', '$filter', '$routeParam
     // Why did I need this??
     $scope.url = (link) => {
         $location.url('/portfolio/' + link);
-        console.log('Navigating to ./portfolio/' + link);;
+        console.log('Navigating to ./portfolio/' + link);
     }
 
     
@@ -109,7 +109,8 @@ app.controller('BaseController', ['$scope', '$location', '$filter', '$routeParam
         //     blogId: $scope.update.blogId,
         //     ...data
         // }));
-        portfolio.update(password, {portfolioId: $scope.update.portfolioId, ...data}).then((results) => {
+        data.portfolioId = $scope.update.portfolioId;
+        portfolio.update(password, data).then((results) => {
             console.log(results);
             $scope.message = results.data;
         }).then(() => {
@@ -147,7 +148,8 @@ app.controller('BaseController', ['$scope', '$location', '$filter', '$routeParam
         //     blogId: $scope.update.blogId,
         //     ...data
         // }));
-        blog.update(password, {blogId: $scope.update.blogId, ...data}).then((results) => {
+        data.blogId = $scope.update.blogId;
+        blog.update(password, data).then((results) => {
             console.log(results);
             $scope.message = results.data;
         }).then(() => {
@@ -186,11 +188,9 @@ app.controller('BaseController', ['$scope', '$location', '$filter', '$routeParam
 function blog($http) {
     var blog = {};
     blog.create = function(password, data) {
-        return $http.post('./php/index.php', {
-            'action': 'createBlogEntry', 
-            'password': password,
-            ...data
-        })
+        data.action = 'createBlogEntry';
+        data.password = password;
+        return $http.post('./php/index.php', data)
     }
     blog.read = function() {
         return $http.post('./php/index.php', {
@@ -198,11 +198,9 @@ function blog($http) {
         })
     }
     blog.update = function(password, data) {
-        return $http.post('./php/index.php', {
-            'action': 'updateBlogEntry', 
-            'password': password,
-            ...data
-        })
+        data.action = 'updateBlogEntry';
+        data.password = password;
+        return $http.post('./php/index.php', data);
     }
     blog.delete = function(password, blogId) {
         return $http.post('./php/index.php', {
@@ -224,10 +222,8 @@ app.factory('blog', ['$http', blog]);
 function contact($http) {
     var contact = {};
     contact.mail = function(data) {
-        return $http.post('./php/index.php', {
-            'action': 'contact',
-            ...data
-        })
+        data.action = 'contact';
+        return $http.post('./php/index.php', contact)
     }
     return contact;
 }
@@ -244,12 +240,9 @@ function portfolio($http) {
         //     password: password,
         //     ...data
         // }));
-        
-        return $http.post('./php/index.php', {
-            'action': 'createPortfolioEntry', //this is the problem
-            'password': password,
-            ...data
-        })
+        data.action = 'createPortfolioEntry';
+        data.password = password;
+        return $http.post('./php/index.php', data);
     }
     portfolio.read = function() {
         return $http.post('./php/index.php', {
@@ -257,11 +250,9 @@ function portfolio($http) {
         })
     }
     portfolio.update = function(password, data) {
-        return $http.post('./php/index.php', {
-            'action': 'updatePortfolioEntry', //this is the problem
-            'password': password,
-            ...data
-        })
+        data.action = 'updatePortfolioEntry';
+        data.password = password;
+        return $http.post('./php/index.php', data)
     }
     portfolio.delete = function(password, portfolioId) {
         return $http.post('./php/index.php', {

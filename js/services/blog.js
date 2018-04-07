@@ -1,11 +1,9 @@
 function blog($http) {
     var blog = {};
     blog.create = function(password, data) {
-        return $http.post('./php/index.php', {
-            'action': 'createBlogEntry', 
-            'password': password,
-            ...data
-        })
+        data.action = 'createBlogEntry';
+        data.password = password;
+        return $http.post('./php/index.php', data)
     }
     blog.read = function() {
         return $http.post('./php/index.php', {
@@ -13,11 +11,9 @@ function blog($http) {
         })
     }
     blog.update = function(password, data) {
-        return $http.post('./php/index.php', {
-            'action': 'updateBlogEntry', 
-            'password': password,
-            ...data
-        })
+        data.action = 'updateBlogEntry';
+        data.password = password;
+        return $http.post('./php/index.php', data);
     }
     blog.delete = function(password, blogId) {
         return $http.post('./php/index.php', {

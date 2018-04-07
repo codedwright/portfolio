@@ -5,12 +5,9 @@ function portfolio($http) {
         //     password: password,
         //     ...data
         // }));
-        
-        return $http.post('./php/index.php', {
-            'action': 'createPortfolioEntry', //this is the problem
-            'password': password,
-            ...data
-        })
+        data.action = 'createPortfolioEntry';
+        data.password = password;
+        return $http.post('./php/index.php', data);
     }
     portfolio.read = function() {
         return $http.post('./php/index.php', {
@@ -18,11 +15,9 @@ function portfolio($http) {
         })
     }
     portfolio.update = function(password, data) {
-        return $http.post('./php/index.php', {
-            'action': 'updatePortfolioEntry', //this is the problem
-            'password': password,
-            ...data
-        })
+        data.action = 'updatePortfolioEntry';
+        data.password = password;
+        return $http.post('./php/index.php', data)
     }
     portfolio.delete = function(password, portfolioId) {
         return $http.post('./php/index.php', {
