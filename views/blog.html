@@ -24,10 +24,10 @@
 			</div>
 			<div class="content__section">
 				<div class="cards">
-					<article ng-repeat="entry in blog" class="card">
+					<article ng-repeat="entry in blog | orderBy:'-date'" class="card">
 						<header class="card__header">
 							<img src="{{ entry.thumbnail }}" class="responsive-img card__img" alt="{{ entry.title | uppercase }} Thumbnail">
-							<span class="card__date">{{ entry.date | date : "mediumDate"}}</span>
+							<span class="card__date">{{ entry.date | date : "mediumDate" }}</span>
 						</header>
 						<div class="card__content">
 							<h4 class="title title_small card__title">{{ entry.title | uppercase }}</h4>
