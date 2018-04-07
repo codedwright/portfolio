@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "description": "Joseph Wright's Portfolio project for school, first released Spring '17",
   "main": "gruntfile.js",
   "scripts": {
