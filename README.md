@@ -39,9 +39,11 @@ After making changes:
 
 # Known Issues
 
-[**Spread in object literals**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Browser_compatibility)
+~~[**Spread in object literals**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Browser_compatibility)
 The Rest/Spread Properties for ECMAScript proposal (stage 4) adds spread properties to object literals.  
-Support is limited to Chrome v60+ (current 65) and Firefox v55+, without current support for Edge, IE, or Safari. 
+Support is limited to Chrome v60+ (current 65) and Firefox v55+, without current support for Edge, IE, or Safari. ~~
+
+Fixed in v2.1.11
 
 # Storyboard
 
